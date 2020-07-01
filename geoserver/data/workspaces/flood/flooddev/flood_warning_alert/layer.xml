@@ -1,0 +1,23 @@
+<layer>
+  <name>flood_warning_alert</name>
+  <id>LayerInfoImpl-74ac348f:14887c3456d:-7fff</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--67478e2d:14b5972729a:-7c13</id>
+  </defaultStyle>
+  <styles class="linked-hash-set">
+    <style>
+      <id>StyleInfoImpl--67478e2d:14b5972729a:-7c14</id>
+    </style>
+    <style>
+      <id>StyleInfoImpl--67478e2d:14b5972729a:-7c13</id>
+    </style>
+  </styles>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-74ac348f:14887c3456d:-8000</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

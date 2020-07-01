@@ -1,0 +1,4 @@
+Place setenv.sh in  the tomcat7 bin directory (usually /usr/share/tomcat7/bin).  Make it executable by everyone and change the GEOSERVER_DATA_DIR system property to reference your wiyby2 geoserver data directory (e.g. /home/pwadmore/wiyby2/geoserver/data).
+
+To enable Cross origin Javascript support between the Express web applocation and the node geoserver proxy, overwrite /var/lib/tomcat7/webapps/geoserver/WEB-INF/web.xml with
+web.xml in this directory.  The Cors filter enables cross origin requests from http://localhost:3000

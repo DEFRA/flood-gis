@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<project name="lfwm" basedir="." default="package">
+<!-- ***********************GEOSERVER************************* -->
+        <target name="geoserver">
+                <zip destfile="deploy/geoserver.zip" basedir="data" update="false"/>
+        </target>
+</project>
