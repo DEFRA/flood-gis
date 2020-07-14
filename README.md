@@ -1,6 +1,6 @@
 # flood-gis
 
-This is the repository for the geoserver configuration for the service refresh project for the "Check flood risk" service.
+This is the repository for the geoserver configuration for the service refresh project for the "Check flood risk" service https://github.com/DEFRA/flood-app.
 
 The geoserver installation provides geospatial tiles for our geospatial datasets that are stored in a postgis:postgres installation found at https://github.com/DEFRA/flood-db
 
