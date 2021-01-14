@@ -1,0 +1,15 @@
+<layer>
+  <name>rainfall_stations</name>
+  <id>LayerInfoImpl--1bf56d5e:177011cf79f:-7ffe</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--570ae188:124761b8d78:-7fdf</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--1bf56d5e:177011cf79f:-7fff</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>
