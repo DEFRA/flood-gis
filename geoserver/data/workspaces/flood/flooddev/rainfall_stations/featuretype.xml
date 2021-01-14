@@ -51,6 +51,8 @@ from u_flood.rainfall_stations_mview&#xd;
 where region != &apos;Wales&apos;
 </sql>
         <escapeSql>false</escapeSql>
+        <keyColumn>station_reference</keyColumn>
+        <keyColumn>region</keyColumn>
         <geometry>
           <name>centroid</name>
           <type>Point</type>
