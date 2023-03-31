@@ -7,7 +7,6 @@
     <charset>UTF-8</charset>
     <numDecimals>8</numDecimals>
     <onlineResource>http://geoserver.org</onlineResource>
-    <proxyBaseUrl></proxyBaseUrl>
     <verbose>true</verbose>
     <verboseExceptions>true</verboseExceptions>
     <metadata>
@@ -19,8 +18,6 @@
       </map>
     </metadata>
     <localWorkspaceIncludesPrefix>false</localWorkspaceIncludesPrefix>
-    <showCreatedTimeColumnsInAdminList>false</showCreatedTimeColumnsInAdminList>
-    <showModifiedTimeColumnsInAdminList>false</showModifiedTimeColumnsInAdminList>
   </settings>
   <jai>
     <allowInterpolation>false</allowInterpolation>
@@ -68,10 +65,9 @@
     <queueType>UNBOUNDED</queueType>
     <imageIOCacheThreshold>10240</imageIOCacheThreshold>
   </coverageAccess>
-  <updateSequence>797</updateSequence>
+  <updateSequence>794</updateSequence>
   <featureTypeCacheSize>0</featureTypeCacheSize>
   <globalServices>true</globalServices>
   <xmlPostRequestLogBufferSize>1024</xmlPostRequestLogBufferSize>
   <xmlExternalEntitiesEnabled>true</xmlExternalEntitiesEnabled>
-  <webUIMode>DEFAULT</webUIMode>
 </global>
