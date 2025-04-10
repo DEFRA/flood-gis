@@ -68,7 +68,7 @@ ORDER BY severity_value desc
   </store>
   <serviceConfiguration>false</serviceConfiguration>
   <maxFeatures>0</maxFeatures>
-  <numDecimals>1</numDecimals>
+  <numDecimals>6</numDecimals>
   <padWithZeros>false</padWithZeros>
   <forcedDecimal>false</forcedDecimal>
   <overridingServiceSRS>false</overridingServiceSRS>
