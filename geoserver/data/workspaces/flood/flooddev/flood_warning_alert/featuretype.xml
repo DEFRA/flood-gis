@@ -1,5 +1,8 @@
 <featureType>
-  <id>FeatureTypeInfoImpl-74ac348f:14887c3456d:-8000</id>
+  <id>
+    <id>ta_code</id>
+    <idExpression>'flood.' + ta_code</idExpression>
+  </id>
   <name>flood_warning_alert</name>
   <nativeName>flood_warning_alert</nativeName>
   <namespace>
