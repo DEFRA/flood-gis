@@ -48,7 +48,7 @@ ta_code,&#xd;
 ta_name,&#xd;
 severity_value,&#xd;
 severity,&#xd;
-CASE WHEN severity_value = 1 THEN 'severe' WHEN severity_value = 2 THEN 'warning' WHEN severity_value = 3 THEN 'alert' ELSE 'removed' END AS state,&#xd;
+CASE WHEN severity_value = 3 THEN 'severe' WHEN severity_value = 2 THEN 'warning' WHEN severity_value = 1 THEN 'alert' ELSE 'removed' END AS state,&#xd;
 geom&#xd;
 FROM u_flood.fwa_mview&#xd;
 ORDER BY severity_value desc
