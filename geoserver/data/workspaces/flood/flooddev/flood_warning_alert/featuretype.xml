@@ -1,8 +1,5 @@
 <featureType>
-  <id>
-    <id>ta_code</id>
-    <idExpression>'flood.' + ta_code</idExpression>
-  </id>
+ <id>FeatureTypeInfoImpl-74ac348f:14887c3456d:-8000</id>
   <name>flood_warning_alert</name>
   <nativeName>flood_warning_alert</nativeName>
   <namespace>
@@ -43,7 +40,7 @@
   <metadata>
     <entry key="JDBC_VIRTUAL_TABLE">
       <virtualTable>
-        <name>flood_warning_alert</name>
+        <name>flood</name>
         <sql>SELECT &#xd;
 id,&#xd;
 ta_code as taCode,&#xd;
