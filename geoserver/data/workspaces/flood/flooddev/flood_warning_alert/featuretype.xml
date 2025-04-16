@@ -46,6 +46,7 @@ ta_code as id,&#xd;
 ta_code as taCode,&#xd;
 ta_code,&#xd;
 ta_name,&#xd;
+ta_name as name,&#xd;
 severity_value,&#xd;
 severity,&#xd;
 CASE WHEN severity_value = 3 THEN 'severe' WHEN severity_value = 2 THEN 'warning' WHEN severity_value = 1 THEN 'alert' ELSE 'removed' END AS state,&#xd;
