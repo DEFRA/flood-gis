@@ -42,18 +42,18 @@
       <virtualTable>
         <name>flood_warning_alert</name>
 <sql>SELECT &#xd;
-'flood.' || id as id,&#xd;
+'flood.' || id as fid,&#xd;
 ta_code as taCode,&#xd;
 ta_code,&#xd;
 ta_name,&#xd;
-severity_value, &#xd;
+severity_value,&#xd;
 severity,&#xd;
 geom&#xd;
 FROM u_flood.fwa_mview&#xd;
 ORDER BY severity_value desc
 </sql>
         <escapeSql>false</escapeSql>
-        <keyColumn>id</keyColumn>
+        <keyColumn>fid</keyColumn>
         <geometry>
           <name>geom</name>
           <type>MultiPolygon</type>
