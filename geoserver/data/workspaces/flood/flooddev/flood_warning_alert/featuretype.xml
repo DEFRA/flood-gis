@@ -42,7 +42,7 @@
       <virtualTable>
         <name>flood_warning_alert</name>
 <sql>SELECT &#xd;
-'{' || 'flood.' || id || '}' as id,&#xd;
+'flood.' || id as id,&#xd;
 ta_code as taCode,&#xd;
 ta_code,&#xd;
 ta_name,&#xd;
