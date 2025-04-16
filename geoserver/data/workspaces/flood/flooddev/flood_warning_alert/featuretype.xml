@@ -40,7 +40,7 @@
   <metadata>
     <entry key="JDBC_VIRTUAL_TABLE">
       <virtualTable>
-        <name>flood</name>
+        <name>flood_warning_alert</name>
         <sql>SELECT &#xd;
 id,&#xd;
 ta_code as taCode,&#xd;
