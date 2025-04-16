@@ -62,6 +62,7 @@ ORDER BY severity_value desc
       </virtualTable>
     </entry>
     <entry key="cachingEnabled">false</entry>
+    <entry key="featureId">fid</entry>
   </metadata>
   <store class="dataStore">
     <id>DataStoreInfoImpl--30633af1:14863bcf984:-7fff</id>
