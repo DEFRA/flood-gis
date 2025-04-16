@@ -53,7 +53,7 @@ FROM u_flood.fwa_mview&#xd;
 ORDER BY severity_value desc
 </sql>
         <escapeSql>false</escapeSql>
-        <keyColumn>taCode</keyColumn>
+        <keyColumn>tacode</keyColumn>
         <geometry>
           <name>geom</name>
           <type>MultiPolygon</type>
