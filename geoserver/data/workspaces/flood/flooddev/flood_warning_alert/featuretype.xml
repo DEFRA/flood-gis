@@ -42,7 +42,8 @@
       <virtualTable>
         <name>flood_warning_alert</name>
 <sql>SELECT &#xd;
-ta_code as id,&#xd;
+id,&#xd;
+ta_code as taCode,&#xd;
 ta_code,&#xd;
 ta_name,&#xd;
 severity_value,&#xd;
@@ -52,7 +53,7 @@ FROM u_flood.fwa_mview&#xd;
 ORDER BY severity_value desc
 </sql>
         <escapeSql>false</escapeSql>
-        <keyColumn>ta_code</keyColumn>
+        <keyColumn>taCode</keyColumn>
         <geometry>
           <name>geom</name>
           <type>MultiPolygon</type>
@@ -61,7 +62,6 @@ ORDER BY severity_value desc
       </virtualTable>
     </entry>
     <entry key="cachingEnabled">false</entry>
-    <entry key="noPrefixId">true</entry>
   </metadata>
   <store class="dataStore">
     <id>DataStoreInfoImpl--30633af1:14863bcf984:-7fff</id>
