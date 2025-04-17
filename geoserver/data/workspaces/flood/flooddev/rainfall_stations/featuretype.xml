@@ -57,7 +57,7 @@ rs.six_hr_total,&#xd;
 rs.day_total,&#xd;
 rs.value_timestamp AS date&#xd;
 FROM u_flood.rainfall_stations_mview rs&#xd;
-WHERE region != &apos;Wales&apos;
+WHERE rs.region != &apos;Wales&apos;
 </sql>
         <escapeSql>false</escapeSql>
         <keyColumn>station_reference</keyColumn>
