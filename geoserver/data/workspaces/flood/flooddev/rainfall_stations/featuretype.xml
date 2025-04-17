@@ -47,17 +47,17 @@
       <virtualTable>
         <name>rainfall_stations</name>
         <sql>select
-concat('r', station_reference) AS id,&#xd;
-concat('Rainfall measurement at ', station_name) AS name,&#xd;
+concat('r', rs.station_reference) AS id,&#xd;
+concat('Rainfall measurement at ', rs.station_name) AS name,&#xd;
 NULL AS river,&#xd;
 'rainfall' AS type,&#xd;
-CASE WHEN day_total > 0 THEN 'wet' ELSE 'dry' END AS state,&#xd;
-one_hr_total,&#xd;
-six_hr_total,&#xd;
-day_total,&#xd;
-value_timestamp AS date&#xd;
-from u_flood.rainfall_stations_mview&#xd;
-where region != &apos;Wales&apos;
+CASE WHEN rs.day_total > 0 THEN 'wet' ELSE 'dry' END AS state,&#xd;
+rs.one_hr_total,&#xd;
+rs.six_hr_total,&#xd;
+rs.day_total,&#xd;
+rs.value_timestamp AS date&#xd;
+FROM u_flood.rainfall_stations_mview rs&#xd;
+WHERE rs.region != &apos;Wales&apos;
 </sql>
         <escapeSql>false</escapeSql>
         <keyColumn>station_reference</keyColumn>
