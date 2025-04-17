@@ -53,7 +53,7 @@
       <virtualTable>
         <name>stations</name>
         <sql>SELECT ss.rloi_id,&#xd;
-ss.rloi_id as id,&#xd;
+concat('s', ss.rloi_id) as id,&#xd;
 CASE WHEN ss.station_type = 'G' THEN 'groundwater' WHEN ss.station_type = 'C' AND r.river_name IS NULL OR r.river_name = 'Sea Levels' THEN 'sea' ELSE 'river' END AS type,&#xd;
 ss.centroid,&#xd;
 (lower(ss.region) = &apos;wales&apos; OR ss.rloi_id IN (4162, 4170, 4173, 4174, 4176)) AS isWales,&#xd;
