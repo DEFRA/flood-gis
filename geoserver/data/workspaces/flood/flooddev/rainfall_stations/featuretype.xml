@@ -46,7 +46,7 @@
     <entry key="JDBC_VIRTUAL_TABLE">
       <virtualTable>
         <name>rainfall_stations</name>
-        <sql>select rs.station_reference,&#xd;
+        <sql>select rs.id,&#xd;
 concat('r', rs.station_reference) AS id,&#xd;
 concat('Rainfall measurement at ', rs.station_name) AS name,&#xd;
 NULL AS river,&#xd;
@@ -57,7 +57,7 @@ rs.six_hr_total,&#xd;
 rs.day_total,&#xd;
 rs.value_timestamp AS date&#xd;
 FROM u_flood.rainfall_stations_mview rs&#xd;
-WHERE rs.region != &apos;Wales&apos;
+WHERE region != &apos;Wales&apos;
 </sql>
         <escapeSql>false</escapeSql>
         <keyColumn>station_reference</keyColumn>
