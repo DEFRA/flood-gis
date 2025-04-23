@@ -60,6 +60,7 @@ ss.centroid,&#xd;
 concat(CASE WHEN ss.station_type = 'G' THEN 'Groundwater' WHEN ss.station_type = 'C' AND r.river_name IS NULL OR r.river_name = 'Sea Levels' THEN 'Sea' ELSE 'River' END, ' level at ', ss.external_name) AS name,&#xd;
 CASE WHEN ss.status != 'Active' THEN 'error' WHEN risk.at_risk = true THEN 'high' ELSE 'normal' END AS state,&#xd;
 CASE WHEN r.river_name IS NOT NULL THEN r.river_name ELSE ss.wiski_river_name END AS river,&#xd;
+
 CASE &#xd;
 	WHEN risk.processed_value = &apos;NaN&apos; THEN null&#xd;
 	ELSE risk.processed_value&#xd;
@@ -67,7 +68,25 @@ END AS value,&#xd;
 risk.value_timestamp as date,&#xd;
 risk.trend,&#xd;
 r.up,&#xd;
-r.down&#xd;
+r.down,&#xd;
+
+<!-- Legacy properties that can be removed in future -->
+risk.at_risk as atRisk,&#xd;
+ss.status,&#xd;
+
+risk.value_timestamp as value_date,&#xd;
+
+risk.percentile_5,&#xd;
+risk.percentile_95,&#xd;
+risk.forecast as is_ffoi,&#xd;
+(risk.forecast AND ffoi.value &gt;= risk.percentile_5) as is_ffoi_at_risk,&#xd;
+CASE &#xd;
+	WHEN ffoi.value = &apos;NaN&apos; THEN null&#xd;
+	ELSE ffoi.value&#xd;
+END AS ffoi_max,&#xd;
+ffoi.value_date as ffoi_date,&#xd;
+r.river_name&#xd;
+<!-- ----------------------------------------------- -->
 FROM u_flood.telemetry_context_mview ss&#xd;
 left join (&#xd;
 	-- Get at_risk, but ensure get highest risk and direction in case M station.&#xd;
