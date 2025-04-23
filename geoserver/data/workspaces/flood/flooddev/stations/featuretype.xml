@@ -86,7 +86,8 @@ CASE &#xd;
 END AS ffoi_max,&#xd;
 ffoi.value_date as ffoi_date,&#xd;
 r.river_name&#xd;
-<!-- ----------------------------------------------- -->
+<!-- x -->
+
 FROM u_flood.telemetry_context_mview ss&#xd;
 left join (&#xd;
 	-- Get at_risk, but ensure get highest risk and direction in case M station.&#xd;
