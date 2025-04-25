@@ -56,6 +56,8 @@ rs.one_hr_total,&#xd;
 rs.six_hr_total,&#xd;
 rs.day_total,&#xd;
 rs.value_timestamp AS date,&#xd;
+
+<!-- rs.name,&#xd; -->
 <!-- Legacy properties that can be removed in future -->
 rs.telemetry_station_id,&#xd;
 rs.station_name,&#xd;
@@ -70,6 +72,7 @@ rs.value,&#xd;
 rs.value_timestamp,&#xd;
 rs.type&#xd;
 <!-- x -->
+
 FROM u_flood.rainfall_stations_mview rs&#xd;
 WHERE rs.region != &apos;Wales&apos;
 </sql>
