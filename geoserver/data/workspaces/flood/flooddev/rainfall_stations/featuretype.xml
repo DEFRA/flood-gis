@@ -56,6 +56,7 @@ rs.one_hr_total,&#xd;
 rs.six_hr_total,&#xd;
 rs.day_total,&#xd;
 rs.value_timestamp AS date,&#xd;
+rs.centroid,&#xd;
 
 <!-- rs.name,&#xd; -->
 <!-- Legacy properties that can be removed in future -->
