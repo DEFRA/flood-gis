@@ -49,14 +49,27 @@
         <sql>select rs.station_reference,&#xd;
 concat('r', rs.station_reference) AS id,&#xd;
 concat('Rainfall measurement at ', rs.station_name) AS name,&#xd;
-NULL AS river,&#xd;
-'rainfall' AS type,&#xd;
+'rainfall' AS category,&#xd;
 CASE WHEN rs.day_total > 0 THEN 'wet' ELSE 'dry' END AS state,&#xd;
 rs.region,&#xd;
 rs.one_hr_total,&#xd;
 rs.six_hr_total,&#xd;
 rs.day_total,&#xd;
-rs.value_timestamp AS date&#xd;
+rs.value_timestamp AS date,&#xd;
+<!-- Legacy properties that can be removed in future -->
+rs.telemetry_station_id,&#xd;
+rs.station_name,&#xd;
+rs.ngr,&#xd;
+rs.easting,&#xd;
+rs.northing,&#xd;
+rs.data_type,&#xd;
+rs.period,&#xd;
+rs.units,&#xd;
+rs.telemetry_value_parent_id,&#xd;
+rs.value,&#xd;
+rs.value_timestamp,&#xd;
+rs.type&#xd;
+<!-- x -->
 FROM u_flood.rainfall_stations_mview rs&#xd;
 WHERE rs.region != &apos;Wales&apos;
 </sql>
