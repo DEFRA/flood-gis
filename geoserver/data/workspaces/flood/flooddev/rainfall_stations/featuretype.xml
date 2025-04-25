@@ -52,6 +52,7 @@ concat('Rainfall measurement at ', rs.station_name) AS name,&#xd;
 NULL AS river,&#xd;
 'rainfall' AS type,&#xd;
 CASE WHEN rs.day_total > 0 THEN 'wet' ELSE 'dry' END AS state,&#xd;
+rs.region,&#xd;
 rs.one_hr_total,&#xd;
 rs.six_hr_total,&#xd;
 rs.day_total,&#xd;
