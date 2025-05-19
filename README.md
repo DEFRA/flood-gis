@@ -110,7 +110,14 @@ ensure they match the network and ports used by flood-db
 
 `datastore.xml`
 
-Note: verify the connection paramaters match those configured for the local docker db then copy to `geoserver/data/workspaces/flood/flooddev/datastore.xml` 
+_Notes_
+
+1. verify the connection paramaters match those configured for the local docker
+   db then copy to `geoserver/data/workspaces/flood/flooddev/datastore.xml`
+
+2. this file is in .gitignore as it could potentially include secrets so needs
+   recreating in a new clone of the repo
+
 ```
 <dataStore>
   <id>DataStoreInfoImpl--30633af1:14863bcf984:-7fff</id>
