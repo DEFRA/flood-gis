@@ -1,3 +1,5 @@
 geoserver/data/workspaces/flood/flooddev/datastore.xml
 geoserver/data/logs/*.log
+geoserver/data/logs/*.bak
+
 

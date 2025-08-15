@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  geoserver:
+    networks:
+      - cff-shared
+
+networks:
+  # Note: flood-db should also be using this shared network
+  cff-shared:
+    external: true
