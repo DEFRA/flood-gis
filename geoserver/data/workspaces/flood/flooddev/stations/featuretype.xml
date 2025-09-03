@@ -52,7 +52,11 @@
     <entry key="JDBC_VIRTUAL_TABLE">
       <virtualTable>
         <name>stations</name>
-        <sql>SELECT ss.rloi_id,&#xd;
+        <sql>SELECT DISTINCT &#xd;
+    CASE &#xd;
+        WHEN risk.direction = &apos;d&apos; THEN CONCAT(ss.rloi_id, &apos;/downstream&apos;)&#xd;
+        ELSE CAST(ss.rloi_id AS VARCHAR)&#xd;
+    END AS rloi_id,&#xd;
 risk.direction,&#xd;
 ss.station_type as type,&#xd;
 ss.centroid,&#xd;
@@ -78,14 +82,18 @@ END AS ffoi_max,&#xd;
 ffoi.value_date as ffoi_date,&#xd;
 r.up,&#xd;
 r.down,&#xd;
-r.river_name&#xd;
+r.river_name,&#xd;
+r.up_station_type,&#xd;
+r.down_station_type,&#xd;
+ss.rloi_id as base_rloi_id&#xd;
 FROM u_flood.telemetry_context_mview ss&#xd;
 left join (&#xd;
-	-- Get at_risk, but ensure get highest risk and direction in case M station.&#xd;
-	SELECT distinct rloi_id, at_risk, direction, processed_value, value_timestamp, percentile_5, percentile_95, trend, forecast, rank() OVER (PARTITION BY rloi_id order by at_risk desc, direction desc, processed_value, value_timestamp, percentile_5, percentile_95, forecast) as risk_rank &#xd;
+	-- Get all risk data for both upstream and downstream directions with ranking to avoid duplicates&#xd;
+	SELECT rloi_id, at_risk, direction, processed_value, value_timestamp, percentile_5, percentile_95, trend, forecast,&#xd;
+	       ROW_NUMBER() OVER (PARTITION BY rloi_id, direction ORDER BY at_risk DESC, value_timestamp DESC, processed_value DESC) as rn&#xd;
 	FROM u_flood.stations_overview_mview&#xd;
-	order by rloi_id&#xd;
-) as risk on risk.rloi_id = ss.rloi_id and risk.risk_rank = 1&#xd;
+	WHERE direction IN (&apos;u&apos;, &apos;d&apos;)&#xd;
+) as risk on risk.rloi_id = ss.rloi_id AND risk.rn = 1&#xd;
 left join u_flood.ffoi_max ffoi on ss.telemetry_id = ffoi.telemetry_id&#xd;
 left join u_flood.rivers_mview r on ss.rloi_id = r.rloi_id and risk.direction = r.qualifier&#xd;
 WHERE (lower(ss.region) != &apos;wales&apos; OR ss.catchment IN (&apos;Dee&apos;, &apos;Severn Uplands&apos;, &apos;Wye&apos;))
